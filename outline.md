@@ -1,0 +1,36 @@
+- Intro
+  - Me
+  - WCP
+  - Wausau.js
+  - Family
+  - Loves
+- REST
+  - Strengths
+  - Weaknesses
+  - Illustration of Workflow
+- GraphQL
+  - What it is
+  - History
+  - vs REST
+  - Upsides
+    - Strongly Typed
+    - Mutliple Queries
+    - Hierarchical
+    - Documentation
+    - Tooling
+    - Protocol Agnostic
+    - Language Agnostic
+  - Downsides
+    - HTTP Cache
+    - Protecting Public API
+- Demo
+  - Schema
+  - GraphQL Playground
+  - Queries
+  - Mutations
+  - Subscriptions
+- Adoption
+  - Incremental Adoption
+  - GraphQL Gateway
+- Summary
+  - Notes on how its helped us
