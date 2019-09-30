@@ -1,0 +1,23 @@
+{
+  "name": "Build_Better_APIs_GraphQL",
+  "version": "1.0.0",
+  "description": "Presentation about building GraphQL APIs",
+  "main": "index.js",
+  "repository": "git@github.com:sythas/Build_Better_APIs_GraphQL.git",
+  "author": "Jack Smith <jack@sythas.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "mdx-deck": "2.5.1",
+    "mdx-deck-code-surfer": "^0.5.5",
+    "raw-loader": "^3.1.0"
+  },
+  "scripts": {
+    "start": "mdx-deck deck.mdx",
+    "build": "mdx-deck build deck.mdx"
+  },
+  "dependencies": {
+    "react": "^16.10.1",
+    "styled-components": "^4.4.0"
+  }
+}
