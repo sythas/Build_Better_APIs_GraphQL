@@ -1,0 +1,170 @@
+[
+  {
+    "id": "1",
+    "title": "The Eye of the World",
+    "pages": "702",
+    "publishedYear": "1990",
+    "author": "1",
+    "characters": ["1", "2", "3", "4"]
+  },
+  {
+    "id": "2",
+    "title": "The Great Hunt",
+    "pages": "599",
+    "publishedYear": "1990",
+    "author": "1",
+    "characters": ["1", "2", "3", "4", "5"]
+  },
+  {
+    "id": "3",
+    "title": "Dragon Reborn",
+    "pages": "545",
+    "publishedYear": "1991",
+    "author": "1",
+    "characters": ["1", "2", "3", "4", "5"]
+  },
+  {
+    "id": "4",
+    "title": "The Shadow Rising",
+    "pages": "891",
+    "publishedYear": "1992",
+    "author": "1",
+    "characters": ["1", "2", "3", "4", "5"]
+  },
+  {
+    "id": "5",
+    "title": "The Fires of Heaven",
+    "pages": "684",
+    "publishedYear": "1993",
+    "author": "1",
+    "characters": ["1", "2", "3", "4", "5"]
+  },
+  {
+    "id": "6",
+    "title": "Lord of Chaos ",
+    "pages": "699",
+    "publishedYear": "1994",
+    "author": "1",
+    "characters": ["1", "2", "3", "4", "5"]
+  },
+  {
+    "id": "7",
+    "title": "A Crown of Swords",
+    "pages": "635",
+    "publishedYear": "1996",
+    "author": "1",
+    "characters": ["1", "2", "3", "4", "5"]
+  },
+  {
+    "id": "8",
+    "title": "The Path of Daggers",
+    "pages": "591",
+    "publishedYear": "1998",
+    "author": "1",
+    "characters": ["1", "2", "3", "4"]
+  },
+  {
+    "id": "9",
+    "title": "Winter's Heart",
+    "pages": "533",
+    "publishedYear": "2000",
+    "author": "1",
+    "characters": ["1", "2", "3", "4"]
+  },
+  {
+    "id": "10",
+    "title": "Crossroads of Twilight",
+    "pages": "681",
+    "publishedYear": "2003",
+    "author": "1",
+    "characters": ["1", "2", "3", "4"]
+  },
+  {
+    "id": "11",
+    "title": "Knife of Dreams",
+    "pages": "761",
+    "publishedYear": "2005",
+    "author": "1",
+    "characters": ["1", "2", "3", "4", "5"]
+  },
+  {
+    "id": "12",
+    "title": "The Gathering Storm",
+    "pages": "766",
+    "publishedYear": "2009",
+    "author": "1",
+    "characters": ["1", "2", "3", "4", "5"]
+  },
+  {
+    "id": "13",
+    "title": "Towers of Midnight",
+    "pages": "843",
+    "publishedYear": "2010",
+    "author": "1",
+    "characters": ["1", "2", "3", "4"]
+  },
+  {
+    "id": "14",
+    "title": "A Memory of Light",
+    "pages": "909",
+    "publishedYear": "2013",
+    "author": "1",
+    "characters": ["1", "2", "3", "4", "5"]
+  },
+  {
+    "id": "15",
+    "title": "Mistborn: The Final Empire",
+    "pages": "541",
+    "publishedYear": "2006",
+    "author": "2",
+    "characters": ["8", "9"]
+  },
+  {
+    "id": "16",
+    "title": "Mistborn: The Well of Ascension",
+    "pages": "590",
+    "publishedYear": "2007",
+    "author": "2",
+    "characters": ["8", "9"]
+  },
+  {
+    "id": "17",
+    "title": "Mistborn: The Hero of Ages",
+    "pages": "572",
+    "publishedYear": "2008",
+    "author": "2",
+    "characters": ["8", "9"]
+  },
+  {
+    "id": "18",
+    "title": "The Fellowship of the Ring",
+    "pages": "479",
+    "publishedYear": "1954",
+    "author": "3",
+    "characters": ["6", "7"]
+  },
+  {
+    "id": "19",
+    "title": "The Two Towers",
+    "pages": "415",
+    "publishedYear": "1954",
+    "author": "3",
+    "characters": ["6"]
+  },
+  {
+    "id": "20",
+    "title": "The Return of the King",
+    "pages": "347",
+    "publishedYear": "1955",
+    "author": "3",
+    "characters": ["6"]
+  },
+  {
+    "id": "21",
+    "title": "The Hobbit",
+    "pages": "304",
+    "publishedYear": "1937",
+    "author": "3",
+    "characters": ["7"]
+  }
+]

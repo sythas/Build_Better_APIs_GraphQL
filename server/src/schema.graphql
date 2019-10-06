@@ -1,12 +1,49 @@
-type Person {
+enum Alignment {
+  GOOD
+  BAD
+  NEUTRAL
+}
+
+type Character {
   id: ID!
   name: String!
+  alignment: Alignment
+  books: [Book]!
 }
 
-extend type Query {
-  person(id: ID!): Person
+type Book {
+  id: ID!
+  title: String!
+  pages: Int!
+  publishedYear: Int!
+  author: Author!
+  characters: [Character]!
 }
 
-extend type Mutation {
-  updateName(id: ID!, name: String!): Person
+input CreateBookInput {
+  name: String!
+  alignment: Alignment
+}
+
+input UpdateBookInput {
+  name: String
+  alignment: Alignment
+}
+
+type Author {
+  id: ID!
+  name: String!
+  born: String
+  died: String
+  books: [Book]!
+}
+
+type Query {
+  book(id: ID!): Book
+}
+
+type Mutation {
+  createBook(input: CreateBookInput): Book
+  updateBook(id: ID!, input: UpdateBookInput!): Book
+  deleteBook(id: ID!): Boolean
 }
