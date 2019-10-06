@@ -3,7 +3,6 @@
   - WCP
   - Wausau.js
   - Family
-  - Loves
 - REST
   - Strengths
   - Weaknesses
