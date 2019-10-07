@@ -47,3 +47,7 @@ type Mutation {
   updateBook(id: ID!, input: UpdateBookInput!): Book
   deleteBook(id: ID!): Boolean
 }
+
+type Subscription {
+  onBookChanged: Book
+}

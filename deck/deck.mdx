@@ -1,34 +1,173 @@
 export { future as theme } from 'mdx-deck/themes'
-import Layout from './src/Layout.js'
-import { Split } from 'mdx-deck/layouts'
 import { CodeSurfer } from 'mdx-deck-code-surfer'
+import { Image } from './src/Image.js'
 
-import schema from 'raw-loader!../server/src/schema.graphql'
+import schema from '!raw-loader!../server/src/schema.graphql'
+import resolvers from '!raw-loader!../server/src/resolvers.js'
 
-# Build Better APIs with GraphQL
+## Build Better APIs with GraphQL
 
 ---
-
-export default Split
 
 <img src="./me.jpeg" />
+<img src="./wausaujs.png" style={{ width: '400px', marginLeft: '1rem'}} />
 
 - Jack Smith
-- Senior Programmer / Analyst - Wausau Coated Products
+- Wausau Coated Products
 - Wausau.js
+- Sythas Software LLC
 
 ---
 
-# GRAPHQL WTF?
+## Journey to GraphQL
+
+<Image src="./journey.jpg">
+
+Photo by
+[Mantas Hesthaven](https://unsplash.com/@mantashesthaven?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+on
+[Unsplash](https://unsplash.com/s/photos/journey?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+
+</Image>
 
 ---
 
-<CodeSurfer code={schema} lang="graphql" showNumbers={false} dark={false} />
+## The Plan
+
+- HTTP + Websocket microservices
+- Lambda like handlers
+- Event Sourced
 
 ---
 
-# GRAPHQL PLAYGROUND
+## Success!
+
+<Image src="./success.jpg">
+
+Photo by
+[Andreas Klassen](https://unsplash.com/@schmaendels?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+on
+[Unsplash](https://unsplash.com/s/photos/success?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+
+</Image>
 
 ---
 
-# HOW CAN I START USING GRAPHQL
+## Slowly, Cracks
+
+- Hundreds of lambdas
+- Side effects chains
+- Near copies
+
+---
+
+<Image src="./betrayal.gif" width="900px">
+
+[Giphy](https://giphy.com/gifs/firefly-joss-whedon-wash-LpWkBPb5lvPdm)
+
+</Image>
+
+---
+
+## GraphQL
+
+<Image src="./light.jpg">
+
+Photo by
+[Lori M. Sousa](https://unsplash.com/@loriseuss?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+on
+[Unsplash](https://unsplash.com/s/photos/break-in-cloud?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+
+</Image>
+
+---
+
+## GraphQL
+
+- Company Wide Data Graph
+- Strongly Typed Schema
+- Query only the data you need
+- Subscriptions
+- Automatic Documentation
+- Great Tools
+
+---
+
+<CodeSurfer
+  code={schema}
+  lang="graphql"
+  showNumbers={false}
+  dark={false}
+  steps={[
+    { notes: 'Schema' },
+    { range: [14, 21], notes: 'Types' },
+    {
+      tokens: { 15: [3, 4], 16: [3, 4], 17: [3, 4], 18: [3, 4] },
+      notes: 'Scalar Types (ID, String, Int, Float, Boolean)',
+    },
+    { tokens: { 19: [3, 4] }, notes: 'A single Author' },
+    { tokens: { 20: [4, 5, 6, 7] }, notes: 'List of Characters' },
+    { range: [23, 26], notes: 'Input Type' },
+    { range: [1, 5], notes: 'Enumerations' },
+    { range: [41, 43], notes: 'Query Type' },
+    { range: [45, 49], notes: 'Mutation Type' },
+    { range: [51, 53], notes: 'Subscription Type' },
+  ]}
+/>
+
+---
+
+<CodeSurfer
+  code={resolvers}
+  lang="javascript"
+  showNumbers={false}
+  dark={false}
+  steps={[
+    { notes: 'Resolvers' },
+    {
+      tokens: { 15: [1], 18: [1], 36: [1], 40: [1], 43: [1] },
+      notes: 'Types defined in the schema',
+    },
+    {
+      tokens: { 19: [1], 24: [1], 30: [1] },
+      notes: 'Fields defined on the Mutation type',
+    },
+    { range: [19, 23], notes: 'Resolver' },
+    { range: [36, 45], notes: 'resolvers for type fields' },
+  ]}
+/>
+
+---
+
+<iframe
+  src="http://localhost:4000"
+  style={{ width: 1100, height: 600, transform: 'scale(1.2)' }}
+  frameborder="0"
+/>
+
+---
+
+## Benefits
+
+- Easier to reason about
+- Reduced code
+- Backend Agnostic
+- Directives
+- Tools
+
+---
+
+## HOW CAN I Adopt GRAPHQL
+
+- Incremental adoption
+- Gateway
+- Profit!
+
+---
+
+## Resources
+
+- [GraphQL: The Documentary](https://youtu.be/783ccP__No8)
+- [GraphQL Specification](https://graphql.github.io/graphql-spec/June2018/)
+- [How To GraphQL](https://www.howtographql.com)
+- [Apollo Server](https://www.apollographql.com/)
