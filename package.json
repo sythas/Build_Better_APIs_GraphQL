@@ -27,6 +27,6 @@
     "start": "run-p deck server",
     "deck": "mdx-deck deck/deck.mdx",
     "server": "nodemon -r esm server/index.js",
-    "build": "mdx-deck build deck/deck.mdx"
+    "build": "mdx-deck build --no-html deck/deck.mdx"
   }
 }
