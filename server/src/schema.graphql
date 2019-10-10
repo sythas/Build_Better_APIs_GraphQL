@@ -1,3 +1,5 @@
+scalar Date
+
 enum Alignment {
   GOOD
   BAD
@@ -11,6 +13,16 @@ type Character {
   books: [Book]!
 }
 
+input CreateCharacter {
+  name: String!
+  alignment: Alignment
+}
+
+input UpdateCharacter {
+  name: String
+  alignment: Alignment
+}
+
 type Book {
   id: ID!
   title: String!
@@ -21,31 +33,66 @@ type Book {
 }
 
 input CreateBookInput {
-  name: String!
-  alignment: Alignment
+  title: String!
+  pages: Int!
+  publishedYear: Int!
 }
 
 input UpdateBookInput {
-  name: String
-  alignment: Alignment
+  title: String
+  pages: Int
+  publishedYear: Int
 }
 
 type Author {
   id: ID!
   name: String!
-  born: String
-  died: String
+  born: Date
+  died: Date
   books: [Book]!
 }
 
+input CreateAuthorInput {
+  name: String!
+  born: String
+  died: String
+}
+
+input UpdateAuthorInput {
+  name: String
+  born: String
+  died: String
+}
+
+type AuthorBookConnection {
+  author: Author!
+  book: Book!
+}
+
+type CharacterBookConnection {
+  character: Character!
+  book: Book!
+}
+
 type Query {
+  character(id: ID!): Character
   book(id: ID!): Book
+  series(name: String!): [Book]!
+  author(id: ID!): Author
 }
 
 type Mutation {
-  createBook(input: CreateBookInput): Book
+  createBook(input: CreateBookInput!): Book
   updateBook(id: ID!, input: UpdateBookInput!): Book
   deleteBook(id: ID!): Boolean
+  createAuthor(input: CreateAuthorInput!): Author
+  updateAuthor(id: ID!, input: UpdateAuthorInput!): Author
+  deleteAuthor(id: ID!): Boolean
+  createCharacter(input: CreateCharacterInput!): Character
+  updateCharacter(id: ID!, input: UpdateCharacterInput!): Character
+  deleteCharacter(id: ID!): Boolean
+  assignAuthorToBook(authorId: ID!, bookId: ID!): AuthorBookConnection
+  assignCharacterToBook(characterId: ID!, bookId: ID!): CharacterBookConnection
 }
 
 type Subscription {

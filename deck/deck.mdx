@@ -1,6 +1,7 @@
 export { future as theme } from 'mdx-deck/themes'
 import { CodeSurfer } from 'mdx-deck-code-surfer'
 import { Image } from './src/Image.js'
+import { Split } from 'mdx-deck/layouts'
 
 import schema from '!raw-loader!../server/src/schema.graphql'
 import resolvers from '!raw-loader!../server/src/resolvers.js'
@@ -13,13 +14,17 @@ These are only visible in presenter mode
 
 ---
 
-<img src="./me.jpeg" />
-<img src="./wausaujs.png" style={{ width: '400px', marginLeft: '1rem'}} />
+### I'm Jack Smith
 
-- Jack Smith
-- Wausau Coated Products
-- Wausau.js
-- Sythas Software LLC
+<img src="./me.jpeg" />
+
+---
+
+### I organize Wausau.js
+
+<img src="./wausaujs.png" style={{ width: '400px', marginLeft: '1rem' }} />
+
+[RSVP on Meetup](https://www.meetup.com/Wausaujs/)
 
 ---
 
@@ -185,7 +190,7 @@ Get logos of languages that have implmentations
 
 <iframe
   src="http://localhost:4000"
-  style={{ width: 1000, height: 600, transform: 'scale(1.2)' }}
+  style={{ width: 800, height: 600, transform: 'scale(1.2)' }}
   frameBorder="0"
 />
 
