@@ -32,6 +32,7 @@ const Footer = styled.footer`
 
 const Spring = styled.span`
   flex: 1;
+  text-align: center;
 `
 
 export default ({ children, header, footer = true }) => (
@@ -41,7 +42,7 @@ export default ({ children, header, footer = true }) => (
     {footer && (
       <Footer>
         <span>CWITC 2019</span>
-        <Spring />
+        <Spring>Slides: bit.ly/cwitc-deck</Spring>
         <span>@sythasfaroth</span>
       </Footer>
     )}
