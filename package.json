@@ -7,26 +7,17 @@
   "author": "Jack Smith <jack@sythas.com>",
   "license": "MIT",
   "private": true,
-  "dependencies": {
-    "apollo-server": "^2.9.4",
-    "graphql": "^14.5.8",
-    "graphql-tag": "^2.10.1",
-    "raw-loader": "^3.1.0",
-    "react": "^16.10.1",
-    "styled-components": "^4.4.0"
-  },
+  "workspaces": [
+    "packages/*"
+  ],
   "devDependencies": {
-    "esm": "^3.2.25",
-    "mdx-deck": "1.10.2",
-    "mdx-deck-code-surfer": "^0.5.5",
-    "nodemon": "^1.19.3",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.18.2"
   },
   "scripts": {
     "start": "run-p deck server",
-    "deck": "mdx-deck deck/deck.mdx",
-    "server": "nodemon -r esm server/index.js",
-    "build": "mdx-deck build --no-html deck/deck.mdx"
+    "deck": "cd ./packages/deck && yarn start",
+    "server": "cd ./packages/server && yarn start",
+    "build": "cd ./packages/deck && yarn build"
   }
 }

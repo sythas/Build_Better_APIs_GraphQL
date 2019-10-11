@@ -1,0 +1,675 @@
+import { CodeSurfer, CodeSurferColumns, Step } from 'code-surfer'
+import { vsDark, dracula } from '@code-surfer/themes'
+import { Slide, AnnotatedImage, Grid } from './components'
+import { Split, Image } from 'mdx-deck'
+
+import me from '../images/me.jpeg'
+import meetup from '../images/wausaujs.png'
+import journey from '../images/journey.jpg'
+import success from '../images/success.jpg'
+import betrayal from '../images/betrayal.gif'
+import light from '../images/light.jpg'
+import apollo from '../images/apollo.png'
+import gateway from '../images/gateway.png'
+import wcp from '../images/store_logo.png'
+
+export const theme = vsDark
+
+<Slide footer={false}>
+
+## Build Better APIs with GraphQL
+
+</Slide>
+
+---
+
+<Slide header="I'm Jack">
+
+<img src={me} />
+
+</Slide>
+
+---
+
+<Slide header="Senior Programmer / Analyst">
+
+<div
+  style={{ backgroundColor: 'white', padding: '2rem', borderRadius: '1rem' }}
+>
+  <img src={wcp} style={{ width: '364px' }} />
+</div>
+
+</Slide>
+
+---
+
+<Slide header="Founder - Wausau.js">
+
+<img src={meetup} style={{ width: '400px' }} />
+
+[Join us on Meetup](https://www.meetup.com/Wausaujs/)
+
+</Slide>
+
+---
+
+<Slide header="GraphQL">
+
+A query language for APIs
+
+</Slide>
+
+---
+
+<Slide header="Journey to GraphQL">
+<AnnotatedImage src={journey} alt="The journey begins">
+
+Photo by
+[Mantas Hesthaven](https://unsplash.com/@mantashesthaven?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+on
+[Unsplash](https://unsplash.com/s/photos/journey?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+
+</AnnotatedImage>
+</Slide>
+
+---
+
+<Slide header="The Plan™">
+
+- Microservices
+- Event Sourcing
+- Http
+- Websockets
+
+</Slide>
+
+---
+
+<Slide header="Success!">
+<AnnotatedImage src={success}>
+
+Photo by
+[Andreas Klassen](https://unsplash.com/@schmaendels?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+on
+[Unsplash](https://unsplash.com/s/photos/success?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+
+</AnnotatedImage>
+</Slide>
+
+---
+
+<Slide header="But then...">
+<AnnotatedImage src={betrayal} width="900px">
+
+[Giphy](https://giphy.com/gifs/firefly-joss-whedon-wash-LpWkBPb5lvPdm)
+
+</AnnotatedImage>
+</Slide>
+
+---
+
+<Slide header="Problems...">
+
+- Hundreds of Microservices
+- Distributed Side Effects
+- Many Similar
+- Hard to Organize
+- Slowing Progress
+
+</Slide>
+
+---
+
+<Slide header="GraphQL">
+<AnnotatedImage src={light}>
+
+Photo by
+[Lori M. Sousa](https://unsplash.com/@loriseuss?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+on
+[Unsplash](https://unsplash.com/s/photos/break-in-cloud?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+
+</AnnotatedImage>
+</Slide>
+
+---
+
+<Slide header="Languages">
+<Grid>
+
+- JavaScript
+- C#
+- Clojure
+- Elixer
+- Erlang
+- Go
+
+* Groovy
+* Java
+* PHP
+* Python
+* Scala
+* Ruby
+
+</Grid>
+</Slide>
+
+---
+
+<Slide header="Used by">
+<Grid>
+
+- Github
+- Facebook
+- Airbnb
+- Paypal
+
+* Shopify
+* The New York Times
+* Twitter
+* Yelp
+
+</Grid>
+</Slide>
+
+---
+
+<Image src={apollo} />
+
+---
+
+<CodeSurfer>
+
+```graphql title="Schema"
+scalar Date
+
+enum Alignment {
+  GOOD
+  BAD
+  NEUTRAL
+}
+
+type Book {
+  id: ID!
+  title: String!
+  pages: Int!
+  publishedYear: Int!
+  author: Author!
+  characters: [Character]!
+}
+
+input CreateBookInput {
+  title: String!
+  pages: Int!
+  publishedYear: Int!
+}
+
+type Query {
+  book(id: ID!): Book
+  series(name: String!): [Book]!
+}
+
+type Mutation {
+  createBook(input: CreateBookInput!): Book
+  deleteBook(id: ID!): Boolean
+}
+
+type Subscription {
+  onBookChanged: Book
+}
+```
+
+```diff 9:15 subtitle="Types"
+
+```
+
+```diff 10[7:8],11[10:15],12[10:12],13[18:20] subtitle="Scalars: ID, String, Int, Float, Boolean"
+
+```
+
+```diff 14[11:16] subtitle="Other Types"
+
+```
+
+```diff 15[15:25] subtitle="Lists"
+
+```
+
+```diff 15[26] subtitle="Not Null"
+
+```
+
+```diff 24:27 subtitle="Queries"
+
+```
+
+```diff 29:32 subtitle="Mutations"
+
+```
+
+```diff 18:22 subtitle="Input types"
+
+```
+
+```diff 34:36 subtitle="Subscriptions"
+
+```
+
+</CodeSurfer>
+
+---
+
+<CodeSurferColumns themes={[vsDark, dracula]}>
+
+<Step>
+
+```graphql title="Schema"
+type Book {
+  author: Author!
+  characters: [Character]!
+}
+
+type Query {
+  book(id: ID!): Book
+  series(name: String!): [Book]!
+}
+
+type Mutation {
+  createBook(input: CreateBookInput!): Book
+  deleteBook(id: ID!): Boolean
+}
+```
+
+```js title="Resolvers"
+export default {
+  Book: {
+    author: (parent, args, context, info) => {},
+    characters: (parent, args, context, info) => {},
+  },
+
+  Query: {
+    book: (parent, args, context, info) => {},
+    series: (parent, args, context, info) => {},
+  },
+
+  Mutation: {
+    createBook: (parent, args, context, info) => {},
+    deleteBook: (parent, args, context, info) => {},
+  },
+}
+```
+
+</Step>
+
+<Step>
+
+```graphql 1[6:9],6[6:10],11[6:13] title="Schema"
+type Book {
+  author: Author!
+  characters: [Character]!
+}
+
+type Query {
+  book(id: ID!): Book
+  series(name: String!): [Book]!
+}
+
+type Mutation {
+  createBook(input: CreateBookInput!): Book
+  deleteBook(id: ID!): Boolean
+}
+```
+
+```js 2[3:6],6[3:7],10[3:10] title="Resolvers"
+export default {
+  Book: {
+    author: (parent, args, context, info) => {},
+    characters: (parent, args, context, info) => {},
+  },
+  Query: {
+    book: (parent, args, context, info) => {},
+    series: (parent, args, context, info) => {},
+  },
+  Mutation: {
+    createBook: (parent, args, context, info) => {},
+    deleteBook: (parent, args, context, info) => {},
+  },
+}
+```
+
+</Step>
+
+<Step>
+
+```graphql 7 title="Schema"
+type Book {
+  author: Author!
+  characters: [Character]!
+}
+
+type Query {
+  book(id: ID!): Book
+  series(name: String!): [Book]!
+}
+
+type Mutation {
+  createBook(input: CreateBookInput!): Book
+  deleteBook(id: ID!): Boolean
+}
+```
+
+```js 7 title="Resolvers"
+export default {
+  Book: {
+    author: (parent, args, context, info) => {},
+    characters: (parent, args, context, info) => {},
+  },
+  Query: {
+    book: (parent, args, context, info) => {},
+    series: (parent, args, context, info) => {},
+  },
+  Mutation: {
+    createBook: (parent, args, context, info) => {},
+    deleteBook: (parent, args, context, info) => {},
+  },
+}
+```
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+<CodeSurferColumns themes={[vsDark, dracula, vsDark]} sizes={[1,2,2]}>
+
+<Step>
+
+```graphql title="Query"
+query BOOK {
+  book(id: 1) {
+    id
+    title
+    series
+    author {
+      name
+    }
+  }
+}
+```
+
+```graphql title="Schema"
+type Book {
+  id: ID!
+  title: String!
+  pages: Int!
+  publishedYear: Int!
+  author: Author!
+  characters: [Character]!
+}
+
+type Author {
+  id: ID!
+  name: String!
+  born: Date
+  died: Date
+  books: [Book]!
+}
+
+type Query {
+  book(id: ID!): Book
+  series(name: String!): [Book]!
+}
+
+type Mutation {
+  createBook(input: CreateBookInput!): Book
+  deleteBook(id: ID!): Boolean
+}
+```
+
+```js title="Resolvers"
+export default {
+  Book: {
+    author: (parent, args, context, info) => ({
+      name: 'Jack',
+    }),
+    characters: (parent, args, context, info) => {},
+  },
+
+  Query: {
+    book: (parent, args, context, info) => ({
+      id: 1,
+      title: 'GraphQL For Fun and Profit',
+      series: 'Languages',
+    }),
+    series: (parent, args, context, info) => {},
+  },
+
+  Mutation: {
+    createBook: (parent, args, context, info) => {},
+    deleteBook: (parent, args, context, info) => {},
+  },
+}
+```
+
+</Step>
+
+<Step>
+
+```graphql 2:9 title="Query"
+query BOOK {
+  book(id: 1) {
+    id
+    title
+    series
+    author {
+      name
+    }
+  }
+}
+```
+
+```graphql 19 title="Schema"
+type Book {
+  id: ID!
+  title: String!
+  pages: Int!
+  publishedYear: Int!
+  author: Author!
+  characters: [Character]!
+}
+
+type Author {
+  id: ID!
+  name: String!
+  born: Date
+  died: Date
+  books: [Book]!
+}
+
+type Query {
+  book(id: ID!): Book
+  series(name: String!): [Book]!
+}
+
+type Mutation {
+  createBook(input: CreateBookInput!): Book
+  deleteBook(id: ID!): Boolean
+}
+```
+
+```js 8:12 title="Resolvers"
+export default {
+  Book: {
+    author: (parent, args, context, info) => ({
+      name: 'Jack',
+    }),
+    characters: (parent, args, context, info) => {},
+  },
+
+  Query: {
+    book: (parent, args, context, info) => ({
+      id: 1,
+      title: 'GraphQL For Fun and Profit',
+      series: 'Languages',
+    }),
+    series: (parent, args, context, info) => {},
+  },
+
+  Mutation: {
+    createBook: (parent, args, context, info) => {},
+    deleteBook: (parent, args, context, info) => {},
+  },
+}
+```
+
+</Step>
+
+<Step>
+
+```graphql 6:8 title="Query"
+query BOOK {
+  book(id: 1) {
+    id
+    title
+    series
+    author {
+      name
+    }
+  }
+}
+```
+
+```graphql 1,6 title="Schema"
+type Book {
+  id: ID!
+  title: String!
+  pages: Int!
+  publishedYear: Int!
+  author: Author!
+  characters: [Character]!
+}
+
+type Author {
+  id: ID!
+  name: String!
+  born: Date
+  died: Date
+  books: [Book]!
+}
+
+type Query {
+  book(id: ID!): Book
+  series(name: String!): [Book]!
+}
+
+type Mutation {
+  createBook(input: CreateBookInput!): Book
+  deleteBook(id: ID!): Boolean
+}
+```
+
+```js 2:3 title="Resolvers"
+export default {
+  Book: {
+    author: (parent, args, context, info) => ({
+      name: 'Jack',
+    }),
+    characters: (parent, args, context, info) => {},
+  },
+
+  Query: {
+    book: (parent, args, context, info) => ({
+      id: 1,
+      title: 'GraphQL For Fun and Profit',
+      series: 'Languages',
+    }),
+    series: (parent, args, context, info) => {},
+  },
+
+  Mutation: {
+    createBook: (parent, args, context, info) => {},
+    deleteBook: (parent, args, context, info) => {},
+  },
+}
+```
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+<Slide header="Demo">
+
+## GraphQL Playground
+
+</Slide>
+
+---
+
+<Slide header="Benefits">
+
+- Easier
+- Reduced Code
+- Backend Agnostic
+- Client Agnostic
+- **Directives**
+- Dev Tools
+
+</Slide>
+
+---
+
+<Slide>
+
+## How can I GraphQL?
+
+</Slide>
+
+---
+
+<Slide>
+
+<AnnotatedImage src={gateway} />
+
+</Slide>
+
+---
+
+<Slide header="Apollo Client">
+
+[apollo-link-rest](https://www.apollographql.com/docs/link/links/rest/)
+
+</Slide>
+
+---
+
+<Slide header="Resources">
+
+- [Repository](http://bit.ly/cwitc-gql)
+- [GraphQL Specification](https://graphql.github.io/graphql-spec/June2018/)
+- [GraphQL: The Documentary](https://youtu.be/783ccP__No8)
+- [How To GraphQL](https://www.howtographql.com)
+- [Apollo](https://www.apollographql.com/)
+
+</Slide>
+
+---
+
+<Slide>
+
+# Questions?
+
+</Slide>
+
+---
+
+<Slide header="Thanks!">
+
+##
+
+- Jack Smith
+- jack@sythas.com
+- @sythasfaroth
+
+</Slide>

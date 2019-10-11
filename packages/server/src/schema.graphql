@@ -13,12 +13,12 @@ type Character {
   books: [Book]!
 }
 
-input CreateCharacter {
+input CreateCharacterInput {
   name: String!
   alignment: Alignment
 }
 
-input UpdateCharacter {
+input UpdateCharacterInput {
   name: String
   alignment: Alignment
 }
