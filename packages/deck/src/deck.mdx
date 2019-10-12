@@ -1,7 +1,7 @@
 import { CodeSurfer, CodeSurferColumns, Step } from 'code-surfer'
 import { vsDark, dracula } from '@code-surfer/themes'
 import { Slide, AnnotatedImage, Grid } from './components'
-import { Split, Image } from 'mdx-deck'
+import { Split, Image, Notes } from 'mdx-deck'
 
 import me from '../images/me.jpeg'
 import meetup from '../images/wausaujs.png'
@@ -12,8 +12,18 @@ import light from '../images/light.jpg'
 import apollo from '../images/apollo.png'
 import gateway from '../images/gateway.png'
 import wcp from '../images/store_logo.png'
+import slide1 from '../images/Slide1.png'
+import slide2 from '../images/Slide2.png'
 
 export const theme = vsDark
+
+<Image src={slide1} width="1280px" height="720px" />
+
+---
+
+<Image src={slide2} width="1280px" height="720px" />
+
+---
 
 <Slide footer={false}>
 
@@ -112,9 +122,9 @@ on
 
 - Hundreds of Microservices
 - Distributed Side Effects
-- Many Similar
+- Many Similar Services
 - Hard to Organize
-- Slowing Progress
+- It Slowed Us Down
 
 </Slide>
 
@@ -226,7 +236,7 @@ type Subscription {
 
 ```
 
-```diff 14[11:16] subtitle="Other Types"
+```diff 14[11:16] subtitle="Relations Between Types"
 
 ```
 
@@ -246,7 +256,7 @@ type Subscription {
 
 ```
 
-```diff 18:22 subtitle="Input types"
+```diff 18:22 subtitle="Input Types"
 
 ```
 
@@ -255,6 +265,21 @@ type Subscription {
 ```
 
 </CodeSurfer>
+
+<Notes>
+ 
+- Schema
+- Types
+- Scalars Types
+- Other Types
+- Lists
+- Not Null
+- Queries
+- Mutations
+- Input Types
+- Subscriptions
+
+</Notes>
 
 ---
 
@@ -468,7 +493,7 @@ query BOOK {
 }
 ```
 
-```graphql 19 title="Schema"
+```graphql 1:8,19 title="Schema"
 type Book {
   id: ID!
   title: String!
@@ -497,7 +522,7 @@ type Mutation {
 }
 ```
 
-```js 8:12 title="Resolvers"
+```js 10:15 title="Resolvers"
 export default {
   Book: {
     author: (parent, args, context, info) => ({
@@ -539,7 +564,7 @@ query BOOK {
 }
 ```
 
-```graphql 1,6 title="Schema"
+```graphql 1,6,10:16 title="Schema"
 type Book {
   id: ID!
   title: String!
@@ -568,7 +593,7 @@ type Mutation {
 }
 ```
 
-```js 2:3 title="Resolvers"
+```js 2:5 title="Resolvers"
 export default {
   Book: {
     author: (parent, args, context, info) => ({
