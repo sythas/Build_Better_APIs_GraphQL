@@ -1,5 +1,3 @@
-scalar Date
-
 enum Alignment {
   GOOD
   BAD
@@ -47,8 +45,8 @@ input UpdateBookInput {
 type Author {
   id: ID!
   name: String!
-  born: Date
-  died: Date
+  born: String
+  died: String
   books: [Book]!
 }
 
@@ -77,6 +75,7 @@ type CharacterBookConnection {
 type Query {
   character(id: ID!): Character
   book(id: ID!): Book
+  books: [Book]!
   series(name: String!): [Book]!
   author(id: ID!): Author
 }
@@ -96,5 +95,5 @@ type Mutation {
 }
 
 type Subscription {
-  onBookChanged: Book
+  onBookChange: Book
 }
